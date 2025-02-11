@@ -1,12 +1,23 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class NavbarComponent {
+export class AppComponent {
+  tables = new Array(10).fill(null);
+  selectedTable: number | null = null;
 
+  navigate(section: string) {
+    console.log(`Navigiere zu: ${section}`);
+  }
+
+  selectTable(index: number) {
+    this.selectedTable = index;
+  }
+
+  markDone() {
+    console.log('Bestellung abgeschlossen');
+  }
 }
