@@ -1,27 +1,11 @@
 <nav class="navbar">
-  <span>Nav Bar</span>
-  <ul>
-    <li><button (click)="navigate('koch')">Koch</button></li>
-    <li><button (click)="navigate('kellner')">Kellner</button></li>
+  <div class="navbar-brand">MyApp</div>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/" routerLinkActive="active">Koch</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/about" routerLinkActive="active">Kellner</a>
+    </li>
   </ul>
 </nav>
-
-<div class="table-selection">
-  <button
-    *ngFor="let table of tables; let i = index"
-    [class.selected]="selectedTable === i"
-    (click)="selectTable(i)">
-  </button>
-</div>
-
-<div class="orders">
-  <div class="order-list">
-    <h3>^Tischauswahl</h3>
-    <p *ngIf="selectedTable !== null">Bestellung nach Tischauswahl</p>
-  </div>
-  <div class="oldest-order">
-    <h3>Älteste Bestellung</h3>
-  </div>
-</div>
-
-<button class="done-btn" (click)="markDone()">Done</button>

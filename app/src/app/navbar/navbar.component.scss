@@ -1,77 +1,46 @@
-$button-bg: lightgray;
-$button-border: gray;
-$selected-border: blue;
+$primary-color: #007bff;
+$background-color: #f8f9fa;
+$hover-color: darken($primary-color, 10%);
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: $primary-color;
-  padding: 10px;
-  color: $text-color;
+  padding: 1rem;
+  background-color: $background-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-  ul {
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  .navbar-nav {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
+    gap: 1rem;
 
-    li {
-      margin-left: 15px;
-
-      button {
-        color: $text-color;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        padding: 5px 10px;
+    .nav-item {
+      .nav-link {
+        text-decoration: none;
+        color: $primary-color;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
 
         &:hover {
-          text-decoration: underline;
+          background-color: $hover-color;
+          color: white;
         }
       }
     }
   }
 }
 
-.table-selection {
-  display: flex;
-  margin: 10px 0;
-
-  button {
-    width: 40px;
-    height: 40px;
-    margin-right: 5px;
-    background: $button-bg;
-    border: 1px solid $button-border;
-
-    &.selected {
-      border: 2px solid $selected-border;
-    }
-  }
-}
-
-.orders {
-  display: flex;
-  justify-content: space-between;
-  background: gray;
-  padding: 10px;
+.active {
+  font-weight: bold;
   color: white;
-
-  .order-list, .oldest-order {
-    width: 50%;
-  }
-}
-
-.done-btn {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background: white;
-  border: 1px solid black;
-  cursor: pointer;
-
-  &:hover {
-    background: lightgray;
-  }
+  background-color: $primary-color;
+  border-radius: 4px;
 }
