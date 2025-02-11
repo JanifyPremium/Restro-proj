@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//import { KochComponent } from './Koch/Koch.component';
-//import { KellnerComponent } from './Kellner/Kellner.component';
+import { KochComponent } from './koch/koch.component';
+import { KellnerComponent } from './kellner/kellner.component';
 
 const routes: Routes = [
-//  { path: '', component: KochComponent }, // Default route
-  //{ path: 'about', component: KellnerComponent },
+  { path: '', component: KochComponent }, // Default route
+  { path: 'about', component: KellnerComponent },
   // Add more routes here as needed
 ];
 
