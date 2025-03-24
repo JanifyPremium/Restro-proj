@@ -1,0 +1,14 @@
+nav {
+  display: flex;
+  gap: 10px;
+  button {
+    padding: 10px;
+    background: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background: #666;
+    }
+  }
+}

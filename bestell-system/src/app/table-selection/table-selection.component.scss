@@ -1,0 +1,15 @@
+.tables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  button {
+    padding: 10px;
+    background: lightgray;
+    border: 1px solid gray;
+    cursor: pointer;
+    &:hover {
+      background: darkgray;
+    }
+  }
+}

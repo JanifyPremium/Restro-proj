@@ -1,0 +1,7 @@
+<h3>Offene Bestellungen</h3>
+<ul>
+  <li *ngFor="let order of orders">
+    {{ order.details }}
+    <button (click)="markAsDone(order.id)">Fertig</button>
+  </li>
+</ul>
