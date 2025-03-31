@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-table-selection',
+  standalone: true,
   templateUrl: './table-selection.component.html',
   styleUrls: ['./table-selection.component.scss']
 })
