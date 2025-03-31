@@ -1,29 +1,27 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MqttService } from '../mqtt.service';
 
 @Component({
   selector: 'app-order-form',
-  template: `
-    <div class="order-form">
-      <h2>Tisch {{ tableNumber }}</h2>
-      <input [(ngModel)]="newDish" placeholder="Gericht hinzufügen" />
-      <button (click)="addDish()">Hinzufügen</button>
-
-      <ul>
-        <li *ngFor="let dish of orders">{{ dish }}</li>
-      </ul>
-    </div>
-  `,
-  styleUrls: ['./order-form.component.scss']
+  standalone: true,
+  imports: [FormsModule], // Standalone Import!
+  templateUrl: './order-form.component.html',
+  styleUrls: ['./order-form.component.scss'],
 })
 export class OrderFormComponent {
   @Input() tableNumber!: number;
-  newDish: string = '';
-  orders: string[] = [];
+  orderText: string = '';
 
-  addDish() {
-    if (this.newDish.trim()) {
-      this.orders.push(this.newDish);
-      this.newDish = '';
-    }
+  constructor(private mqttService: MqttService) {}
+
+  sendOrder() {
+    const orderData = {
+      table: this.tableNumber,
+      order: this.orderText,
+    };
+
+    this.mqttService.sendMessage('restaurant/orders', JSON.stringify(orderData));
+    console.log('📤 Bestellung gesendet:', orderData);
   }
 }

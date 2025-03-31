@@ -1,1 +1,3 @@
-<p>order-form works!</p>
+<h2>Tisch {{ tableNumber }}</h2>
+<textarea [(ngModel)]="orderText" placeholder="Bestellung eingeben..."></textarea>
+<button (click)="sendOrder()">Bestellung senden</button>
