@@ -1,16 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'; // ← HIER: 'Routes' importieren
-import { TableSelectionComponent } from './table-selection/table-selection.component';
-import { KitchenViewComponent } from './kitchen-view/kitchen-view.component';
+import { Routes } from '@angular/router';
+import { OrderListComponent } from './order-list/order-list.component';
 
-const routes: Routes = [
-  { path: 'waiter', component: TableSelectionComponent },
-  { path: 'kitchen', component: KitchenViewComponent },
-  { path: '', redirectTo: '/waiter', pathMatch: 'full' },
+export const routes: Routes = [
+  { path: '', component: OrderListComponent },
+  { path: 'orders', component: OrderListComponent },
+  { path: '**', redirectTo: '/' } // Fallback
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

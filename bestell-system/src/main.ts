@@ -1,8 +1,8 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
-import { routes } from './app/app.routes'; // Falls du Routing nutzt
+import { routes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)] // Falls Routing vorhanden ist
+  providers: [provideRouter(routes)]
 }).catch(err => console.error(err));

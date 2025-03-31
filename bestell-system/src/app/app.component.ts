@@ -1,21 +1,19 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { KitchenViewComponent } from './kitchen-view/kitchen-view.component';
-import { OrderDetailComponent } from './order-detail/order-detail.component';
-import { OrderListComponent } from './order-list/order-list.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 import { TableSelectionComponent } from './table-selection/table-selection.component';
+import { OrderListComponent } from './order-list/order-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, KitchenViewComponent, OrderDetailComponent, OrderListComponent, TableSelectionComponent],
+  imports: [CommonModule, RouterModule, NavbarComponent, TableSelectionComponent, OrderListComponent],
   template: `
-    <h1>Bestellsystem</h1>
-    <app-order-list></app-order-list>
+    <app-navbar></app-navbar>
+    <app-table-selection></app-table-selection>
+    <router-outlet></router-outlet>
   `,
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'bestell-system';
-}
+export class AppComponent {}

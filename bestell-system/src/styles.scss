@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+$mainColor: #262622;
+$mainColorHover: #5a5a07;
+$textColor: #fff;
+$bgColor: #1a1a1a;
+$borderRadius: 8px;
+
+body {
+  background-color: $bgColor;
+  color: $textColor;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: $mainColorHover;
+}
+
+button {
+  background-color: $mainColor;
+  color: $textColor;
+  border: none;
+  padding: 10px 15px;
+  border-radius: $borderRadius;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $mainColorHover;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: $mainColor;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

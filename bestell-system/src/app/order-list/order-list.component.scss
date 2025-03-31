@@ -1,0 +1,20 @@
+.order-list {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 10px;
+  color: white;
+}
+
+.orders-left, .orders-right {
+  flex: 1;
+  padding: 10px;
+}
+
+button {
+  background-color: #5a5a07;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
