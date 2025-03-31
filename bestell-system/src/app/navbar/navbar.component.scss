@@ -19,7 +19,7 @@ $textColor: #fff;
   ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 10px;
 
     li {
       display: inline;
@@ -32,6 +32,9 @@ $textColor: #fff;
         transition: background 0.3s;
 
         &:hover {
+          background-color: $mainColorHover;
+        }
+        &:active {
           background-color: $mainColorHover;
         }
       }
