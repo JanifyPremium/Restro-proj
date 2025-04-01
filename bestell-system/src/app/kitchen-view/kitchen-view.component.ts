@@ -10,6 +10,6 @@ export class KitchenViewComponent {
   orders: any[] = [];
 
   constructor(private orderService: OrderService) {
-    this.orders = this.orderService.getOrders(); // ✅ Jetzt wird orderService erst nach der Initialisierung genutzt
+    this.orders = this.orderService.getOrders();
   }
 }

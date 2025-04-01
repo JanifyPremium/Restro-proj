@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { connect, MqttClient } from 'mqtt';
-
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +22,8 @@ export class MqttService {
     });
   }
 
-  sendMessage(topic: string, message: string) {
+  sendMessage( message: string) {
+    const topic = '/bestellung/update';
     this.client.publish(topic, message, { qos: 1 }, (error) => {
       if (error) {
         console.error('❌ Fehler beim Senden:', error);

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { OrderFormComponent } from '../order-form/order-form.component';
 @Component({
   selector: 'app-table-selection',
+  imports: [CommonModule, OrderFormComponent],
   template: `
     <div class="table-selection">
       <button *ngFor="let table of tables"

@@ -23,4 +23,6 @@ export class OrderListComponent {
   markAsDone() {
     console.log('Bestellung abgeschlossen');
   }
+  dishes = ['Pizza', 'Burger', 'Schnitzel', 'Salat', 'Pasta', 'Suppe'];
+  selectedDish: string = '';
 }

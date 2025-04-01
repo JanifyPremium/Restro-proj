@@ -5,23 +5,29 @@ import { MqttService } from '../mqtt.service';
 @Component({
   selector: 'app-order-form',
   standalone: true,
-  imports: [FormsModule], // Standalone Import!
+  imports: [FormsModule],
   templateUrl: './order-form.component.html',
   styleUrls: ['./order-form.component.scss'],
 })
 export class OrderFormComponent {
   @Input() tableNumber!: number;
-  orderText: string = '';
+  selectedDish: string = ''; // Speichert die Auswahl
+  dishes: string[] = ['Pizza', 'Pasta', 'Schnitzel', 'Salat', 'Burger', 'Suppe']; // 6 Gerichte
 
   constructor(private mqttService: MqttService) {}
 
   sendOrder() {
+    if (!this.selectedDish) {
+      console.warn('⚠ Kein Gericht ausgewählt!');
+      return;
+    }
+
     const orderData = {
       table: this.tableNumber,
-      order: this.orderText,
+      order: this.selectedDish,
     };
 
-    this.mqttService.sendMessage('restaurant/orders', JSON.stringify(orderData));
+    this.mqttService.sendMessage(JSON.stringify(orderData));
     console.log('📤 Bestellung gesendet:', orderData);
   }
 }
