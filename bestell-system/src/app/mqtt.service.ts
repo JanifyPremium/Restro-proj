@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { connect, MqttClient } from 'mqtt';
+import mqtt, { MqttClient } from 'mqtt';
 @Injectable({
   providedIn: 'root',
 })
 export class MqttService {
   private client: MqttClient;
-  private brokerUrl = 'ws://192.168.101.223:1883'; // Ersetze mit deiner Broker-IP und Port
+  private brokerUrl = 'ws://192.168.101.223:1883';
 
   constructor() {
-    this.client = connect(this.brokerUrl, {
-      username: '',  // Falls nötig
-      password: '',  // Falls nötig
+    this.client = mqtt.connect(this.brokerUrl, {
+      username: '',
+      password: '',
     });
 
     this.client.on('connect', () => {
