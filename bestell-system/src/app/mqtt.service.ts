@@ -9,8 +9,6 @@ export class MqttService {
 
   constructor() {
     this.client = mqtt.connect(this.brokerUrl, {
-      username: '',
-      password: '',
     });
 
     this.client.on('connect', () => {
