@@ -1,9 +1,0 @@
-<h2>Tisch {{ tableNumber }}</h2>
-
-<label for="dish">Gericht auswählen:</label>
-<select id="dish" [(ngModel)]="selectedDish">
-  <option value="" disabled selected>Bitte ein Gericht wählen</option>
-  <option *ngFor="let dish of dishes" [value]="dish">{{ dish }}</option>
-</select>
-
-<button (click)="sendOrder()" [disabled]="!selectedDish">Bestellung senden</button>

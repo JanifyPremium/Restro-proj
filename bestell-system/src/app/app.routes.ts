@@ -1,9 +1,19 @@
 import { Routes } from '@angular/router';
-import { OrderListComponent } from './order-list/order-list.component';
-import { OrderDetailsComponent } from './order-detail/order-detail.component';
+import { KitchenViewComponent } from './kitchen-view/kitchen-view.component';
+import { KellnerViewComponent } from './kellner-view/kellner-view.component';
 
 export const routes: Routes = [
-  { path: '', component: OrderListComponent },
-  { path: 'details', component: OrderDetailsComponent },
-  { path: '**', redirectTo: '/' }
+  {
+    path: '',
+    component: KitchenViewComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'kitchen',
+    component: KitchenViewComponent,
+  },
+  {
+    path: 'orders',
+    component: KellnerViewComponent,
+  }
 ];

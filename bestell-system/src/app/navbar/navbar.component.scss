@@ -3,40 +3,45 @@ $mainColorHover: #5a5a07;
 $textColor: #fff;
 
 .navbar {
+  position: sticky; // optional: bleibt oben beim Scrollen
+  top: 0;
+  width: 100%;
   background-color: $mainColor;
-  padding: 5px, 2px ;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 
   .logo {
     color: $textColor;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+
+    .highlight {
+      color: $mainColorHover;
+    }
   }
 
   ul {
     list-style: none;
     display: flex;
-    gap: 10px;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
 
-    li {
-      display: inline;
+    li a {
+      color: $textColor;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
 
-      a {
-        color: $textColor;
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 5px;
-        transition: background 0.3s;
-
-        &:hover {
-          background-color: $mainColorHover;
-        }
-        &:active {
-          background-color: $mainColorHover;
-        }
+      &:hover,
+      &:active,
+      &.active {
+        background-color: $mainColorHover;
       }
     }
   }

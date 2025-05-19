@@ -5,7 +5,7 @@ import mqtt, { MqttClient } from 'mqtt';
 })
 export class MqttService {
   private client: MqttClient;
-  private brokerUrl = 'ws://192.168.101.223:1883';
+  private brokerUrl = 'ws://192.168.101.223:8080';
 
   constructor() {
     this.client = mqtt.connect(this.brokerUrl, {

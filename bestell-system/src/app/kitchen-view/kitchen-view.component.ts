@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { OrderService } from '../order.service';
+import { CommonModule, NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-kitchen-view',
+  standalone: true,
+  imports: [NgForOf, CommonModule, KitchenViewComponent],
   templateUrl: './kitchen-view.component.html',
   styleUrls: ['./kitchen-view.component.scss']
 })

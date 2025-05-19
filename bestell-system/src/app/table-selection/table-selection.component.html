@@ -1,0 +1,9 @@
+<div class="table-selection">
+  <button
+    *ngFor="let table of tables"
+    [ngClass]="{ active: selectedTable === table }"
+    (click)="selectTable(table)"
+  >
+    {{ table }}
+  </button>
+</div>
