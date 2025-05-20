@@ -5,7 +5,7 @@ import { CommonModule, NgForOf } from '@angular/common';
 @Component({
   selector: 'app-kitchen-view',
   standalone: true,
-  imports: [NgForOf, CommonModule, KitchenViewComponent],
+  imports: [NgForOf, CommonModule],
   templateUrl: './kitchen-view.component.html',
   styleUrls: ['./kitchen-view.component.scss']
 })

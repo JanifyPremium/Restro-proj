@@ -1,1 +1,30 @@
-<p>kellner-view works!</p>
+<div class="food-selection">
+  <input
+    type="text"
+    placeholder="Suche ein Gericht..."
+    [(ngModel)]="searchTerm"
+    class="search-input"
+  />
+
+  <ul class="suggestions">
+    <li *ngFor="let dish of filteredDishes" (click)="addDish(dish)">
+      {{ dish }}
+    </li>
+  </ul>
+
+  <div class="table-selection">
+    <label>Tischnummer auswählen:</label>
+    <app-table-selection (tableSelected)="onTableSelected($event)"></app-table-selection>
+  </div>
+
+  <div class="selected-dishes">
+    <span *ngFor="let dish of selectedDishes" class="selected-item">
+      {{ dish }}
+      <button (click)="removeDish(dish)">❌</button>
+    </span>
+  </div>
+
+  <button class="send-button" (click)="sendOrder()" [disabled]="selectedDishes.length === 0 || selectedTable === null">
+    ✅ Bestellung abschicken
+  </button>
+</div>

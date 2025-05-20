@@ -5,7 +5,7 @@ import mqtt, { MqttClient } from 'mqtt';
 })
 export class MqttService {
   private client: MqttClient;
-  private brokerUrl = 'ws://192.168.101.223:8080';
+  private brokerUrl = 'ws://192.168.101.26:8080';
 
   constructor() {
     this.client = mqtt.connect(this.brokerUrl, {
@@ -21,7 +21,7 @@ export class MqttService {
   }
 
   sendMessage( message: string) {
-    const topic = '/bestellung/update';
+    const topic = '/nuernbez/message';
     this.client.publish(topic, message, { qos: 1 }, (error) => {
       if (error) {
         console.error('❌ Fehler beim Senden:', error);
